@@ -69,7 +69,7 @@ class DisplayCatalogueAction extends Action
             }
 
         } elseif ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $catalogue = new \NetVOD\video\Catalogue();
+            $catalogue = new \ccd\video\Catalogue();
             if (isset($_POST['recherche']) && !empty($_POST['recherche'])) {
                 $search = $_POST['recherche'];
                 $catalogue->insertRecherche($search);

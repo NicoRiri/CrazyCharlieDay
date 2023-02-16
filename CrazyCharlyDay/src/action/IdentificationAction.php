@@ -4,7 +4,7 @@ namespace ccd\action;
 
 use ccd\Auth\Auth;
 
-class IdentificationAction extends \NetVOD\action\Action
+class IdentificationAction extends \ccd\action\Action
 {
 
     public function execute(): string

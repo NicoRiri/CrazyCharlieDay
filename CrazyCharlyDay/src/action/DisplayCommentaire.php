@@ -14,7 +14,7 @@ class DisplayCommentaire extends Action {
         if ($this->http_method=="GET") {
             if (!isset($_SESSION['connexion']->email)){
                 $idserie = $_GET['idserie'];
-                $serie = new \NetVOD\video\Serie($idserie);
+                $serie = new \ccd\video\Serie($idserie);
                 $html = <<<END
                 {$serie->liste_commentaire()}
                 END;
