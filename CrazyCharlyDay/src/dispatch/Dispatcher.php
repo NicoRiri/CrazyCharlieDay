@@ -74,8 +74,8 @@ class Dispatcher
             <html lang="en">
             <head>
                 <meta charset="UTF-8">
-                <link rel="stylesheet" href="./../../style.css">
-                <title>Court-Circuit</title>
+                <link rel="stylesheet" href="./style.css">
+                <title>Accueil</title>
             </head>
             <body>
                 <header class = "monpetitheader" id="pourreglersoucis">
@@ -130,8 +130,8 @@ class Dispatcher
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./../../style.css">
-    <title>Court-Circuit</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Accueil</title>
 </head>
 <body>
     <header class = "monpetitheader" id="pourreglersoucis">
