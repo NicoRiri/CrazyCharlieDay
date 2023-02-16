@@ -9,21 +9,19 @@ class User
 {
     private string $email;
     private string $passwd;
-    private bool $adm = false;
 
 
-    public function __construct($email, $passwd, $adm = false)
+    public function __construct($email, $passwd)
     {
         $this->email = $email;
         $this->passwd = $passwd;
-        $this->adm = $adm;
     }
 
     public function __get(string $at):mixed {
         if (property_exists ($this, $at)) return $this->$at;
         else throw new \Exception ("$at: invalid property");
     }
-
+    
 
     public function __set(string $at,mixed $val):void {
         if ( property_exists ($this, $at) ) $this->$at = $val;
@@ -35,16 +33,19 @@ class User
         $listVidePref = [];
         $sql = "SELECT serie.id, serie.titre
             from serie, preference, user
-            where serie.id=preference.id_serie
+            where serie.id=preference.id_serie 
             and user.id= preference.id_user
             and user.email='{$this->email}'";
         $res = ConnectionFactory::$db->prepare($sql);
         $res->execute();
+
         $serie = Serie::class;
+
         while ($data = $res->fetch()){
             $serie = new Serie($data[0],$data[1]);
             array_push($listVidePref,$serie);
         }
+
         return $listVidePref;
     }*/
 
@@ -62,18 +63,4 @@ class User
         return $id;
     }
 
-    public static function getAdmins(): array{
-        $admins = [];
-        $sql = "SELECT * FROM user WHERE admin = 1";
-        $res = ConnectionFactory::$db->prepare($sql);
-        $res->execute();
-
-        $i = 0;
-        while ($data = $res->fetch()){
-            $admin = new User($data[0],$data[1],$data[2]);
-            $admins[$i] = $admin;
-            $i++;
-        }
-        return $admins;
-    }
 }
