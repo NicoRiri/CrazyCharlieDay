@@ -5,7 +5,7 @@ namespace ccd\action;
 use ccd\db\ConnectionFactory;
 use ccd\video\Serie;
 
-class DisplaySerieEnCoursAction extends \NetVOD\action\Action
+class DisplaySerieEnCoursAction extends \ccd\action\Action
 {
 
     public function execute(): string

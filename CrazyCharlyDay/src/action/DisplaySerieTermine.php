@@ -6,7 +6,7 @@ use ccd\db\ConnectionFactory;
 use ccd\video\Catalogue;
 use ccd\video\Serie;
 
-class DisplaySerieTermine extends \NetVOD\action\Action
+class DisplaySerieTermine extends \ccd\action\Action
 {
 
     public function execute(): string
