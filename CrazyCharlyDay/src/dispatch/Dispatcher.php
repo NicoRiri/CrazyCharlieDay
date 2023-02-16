@@ -20,95 +20,110 @@ class Dispatcher
             case 'DisplaySerieAction':
                 $stmt = new \ccd\action\DisplaySerieAction();
                 $str = $stmt->execute();
-                $this->renderPage($str);
+                $this->renderPage($str,"", "");
                 break;
             case 'DisplayCatalogueAction':
                 $stmt = new \ccd\action\DisplayCatalogueAction();
                 $str = $stmt->execute();
-                $this->renderPage($str);
+                $this->renderPage($str, "", "");
                 break;
             
             case 'DisplayProduit':
                 $stmt = new \ccd\action\DisplayProduit();
                 $str = $stmt->execute();
-                $this->renderPage($str);
+                $this->renderPage($str, "", "");
                 break;
 
             case 'identification':
                 $stmt = new \ccd\action\IdentificationAction();
                 $str = $stmt->execute();
-                $this->renderPage($str);
+                $this->renderPage("", "", $str);
                 break;
 
             case 'inscription':
                 $stmt = new \ccd\action\InscriptionAction();
                 $str = $stmt->execute();
-                $this->renderPage($str);
+                $this->renderPage("",$str, "");
                 break;
 
             case 'DisplaySerieEnCoursAction':
                 $stmt = new \ccd\action\DisplaySerieEnCoursAction();
                 $str = $stmt->execute();
-                $this->renderPage($str);
+                $this->renderPage($str, "", "");
                 break;
 
             case 'ajouterinfo':
                 $stmt = new \ccd\action\AjouterPlusInfoAction();
                 $str = $stmt->execute();
-                $this->renderPage($str);
+                $this->renderPage($str, "", "");
                 break;
             case 'DisplayCommentaire':
                 $stmt = new \ccd\action\DisplayCommentaire();
                 $str = $stmt->execute();
-                $this->renderPage($str);
+                $this->renderPage($str, "", "");
                 break;
 
             case 'activationToken':
                 $stmt = new \ccd\action\ActivationTokenAction();
                 $str = $stmt->execute();
-                $this->renderPage($str);
+                $this->renderPage($str, "", "");
                 break;
 
             case 'DisplaySerieTermine':
                 $stmt = new \ccd\action\DisplaySerieTermine();
                 $str = $stmt->execute();
-                $this->renderPage($str);
+                $this->renderPage($str, "", "");
                 break;
 
             case 'mdpOublie':
                 $stmt = new \ccd\action\MdpOublieAction();
                 $str = $stmt->execute();
-                $this->renderPage($str);
+                $this->renderPage($str, "", "");
                 break;
 
             case 'deconnexion':
                 "oui";
                 $stmt = new \ccd\action\DeconnexionAction();
                 $str = $stmt->execute();
-                $this->renderPage($str);
+                $this->renderPage($str, "", "");
                 break;
             
             case 'DisplayPanierAction':
                 $stmt = new \ccd\action\DisplayPanierAction();
                 $str = $stmt->execute();
-                $this->renderPage($str);
+                $this->renderPage($str, "", "");
                 break;
 
             default :
                 $stmt = new \ccd\action\IdentificationAction();
                 $str = $stmt->execute();
-                $this->renderPage($str);
+                $this->renderPage($str, "", "");
                 break;
         }
 
         
     }
 
-    private function renderPage(string $html): void
+    private function renderPage(string $html, string $log = "", string $sign = ""): void
     {
         $co = "";
         if (!isset($_SESSION['connexion'])){
             $co = <<<END
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <link rel="stylesheet" href="./../../style.css">
+                <title>Accueil</title>
+            </head>
+            <body>
+            <header>
+                <header class = "monpetitheader" id="pourreglersoucis">
+                        <h1 class = "titre_header">Court Circuit Nancy</h1>     
+            
+                </header>
+            </header>
+
             <div class ="pasdidee">
             <p class="pasdidee1">Bienvenue sur</p>
             <p class = "pasdidee2"> Le site de court circuit<br>de click & collect</p>
@@ -117,18 +132,26 @@ class Dispatcher
             
             <div class ="sign">
             <section class="sectionlog" id="test">
-                <h1>LOGIN</h1>
-                <p>Là c'est le formulaire mdrr. </p>
+                <h1>Inscription</h1>
+                <form id="inscription" method="post" action="index.php?action=inscription"><br>
+                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email : </label>
+                <input name="email" type="email" placeholder="<email>"><br>
+                <label>Mot de passe : </label>
+                <input name="password" type="password" placeholder="<password>"><br>
+                <button type="submit">valider</button>
+                </form>
+                <p class = "error">$log</p>
             </section>
             
             <section class="sectionsign">
-                <h1>Sign up</h1>
+                <h1>Connexion</h1>
                 <form id="connexion" method="post" action="index.php?action=identification">
                 <label>Email : </label>
                 <input name="email" type="email" placeholder="<email>"><br>
                 <label>Mot de passe : </label>
                 <input name="password" type="password" placeholder="<password>">
                 <button type="submit">valider</button>
+                <p class = "error" > $sign</p>
                 
             </form>
             </section>
@@ -154,29 +177,36 @@ class Dispatcher
             </section>
             END;
         }
-        echo <<<END
+        else {
+            //ton espace
+            $co = <<<END
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./../../style.css" />
+    <link rel="stylesheet" href="./../../style.css">
     <title>Accueil</title>
 </head>
 <body>
 <header>
     <header class = "monpetitheader" id="pourreglersoucis">
-
-
             <h1 class = "titre_header">Court Circuit Nancy</h1>
+            <a href="index.php?action=deconnexion" class = "deco">Déconnexion</a>
+             <a href="index.php?action=DisplayCatalogueAction">Affichage du catalogue</a>
+             
+             $html
             
-<!--            <a href="accueil.html" class="accueil">ACCUEIL</a>-->
-<!--            <a href="crashteamracing.html" class="CTR">CRASH TEAM RACING</a>-->
-<!--            <a href="teamsonicracing.html" class="SONIC">TEAM SONIC RACING</a>-->
-<!--            <a href="mariokart.html" class="MARIO">MARIO KART</a>-->
-<!--            <a href="trackmania.html" class="trialsfusion">TRIALS FUSION</a>-->
 
     </header>
 </header>
+END;
+
+//            //mon espace
+//            $stmt = new \ccd\action\DisplayCatalogue();
+//            $str = $stmt->execute();
+//            $co = $str;
+        }
+        echo <<<END
 $co
 </body>
 </html>

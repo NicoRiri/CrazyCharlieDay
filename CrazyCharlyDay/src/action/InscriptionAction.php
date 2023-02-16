@@ -34,8 +34,6 @@ class InscriptionAction extends Action
                 END;
             }else{
                 $html .= <<<END
-                
-                <a href=index.php?action=activationToken&email=$mail&token=$token><strong><FONT size="120pt">Validation du compte !</FONT></strong></a>
 
                 END;
             }

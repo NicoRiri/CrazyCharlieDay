@@ -83,11 +83,11 @@ class DisplayCatalogueAction extends Action
                 $catalogue->tri($tri, $attribut);
             }
 
-            //filtre 
+            //filtre
             if (isset($_POST['genre'])) {
                 $catalogue->filtre_genre($_POST['genre']);
             }
-            
+
             if (isset($_POST['public'])) {
                 $catalogue->filtre_public($_POST['public']);
             }

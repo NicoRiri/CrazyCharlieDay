@@ -133,3 +133,21 @@ html {
     color:white;
     font-size: 20px;
 }
+
+
+.error{
+    color: red;
+}
+
+.deco{
+    background-color : white;
+    padding : 5px 10px 5px 10px;
+    color : black;
+    transition-duration: 0.5s;
+    border-radius: 20px;
+}
+
+.deco:hover{
+    background-color : black;
+    color : white;
+}
