@@ -113,7 +113,7 @@ class Dispatcher
             <html lang="en">
             <head>
                 <meta charset="UTF-8">
-                <link rel="stylesheet" href="./../../style.css">
+                <link rel="stylesheet" href="./style.css">
                 <title>Accueil</title>
             </head>
             <body>
@@ -184,7 +184,7 @@ class Dispatcher
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./../../style.css">
+    <link rel="stylesheet" href="./style.css">
     <title>Accueil</title>
 </head>
 <body>

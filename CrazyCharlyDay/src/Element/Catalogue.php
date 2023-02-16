@@ -41,7 +41,7 @@ class Catalogue
                 <figure>
                     <img class="img" src='Images/$v->img' alt='Image du produit'>
                     <figcaption>
-                        <a href="index.php?action=DisplayProduitAction&idproduit=$v->id">$v->nom</a>
+                        <a href="index.php?action=DisplayProduit&idproduit=$v->id">$v->nom</a>
                     </figcaption>
                 </figure>
             </li>

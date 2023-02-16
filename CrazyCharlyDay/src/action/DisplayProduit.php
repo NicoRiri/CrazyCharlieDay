@@ -25,7 +25,7 @@ class DisplayProduit extends Action
 
                 $data = $stmt->fetch(\PDO::FETCH_ASSOC);
                 $produit = new Produit($data['id'], $data['categorie'], $data['nom'], $data['prix'], $data['poids'], $data['description'], $data['detail'], $data['lieu'], $data['distance'], $data['latitude'], $data['longitude'],  $data['img']);
-                $html = <<<END
+                $html .= <<<END
                 {$produit->render()}
                 END;
             }

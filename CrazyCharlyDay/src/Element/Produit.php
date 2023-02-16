@@ -37,6 +37,20 @@ class Produit {
     }
 
     public function render(){
-        echo ($this->nom." ".$this->prix." ".$this->description);
+        $res = "<ul>";
+        $res .= <<<END
+        <li>
+            <figure>
+                <img class="img" src='Images/$this->img' alt='Image du produit'>
+                <figcaption>
+                    <p1>$this->nom</p1><br>
+                    <p2>{$this->prix}€</p2><br>
+                    <p3>$this->description</p3><br>
+                </figcaption>
+            </figure>
+        </li>
+        END;
+
+        return $res . "</ul>";
     }
 }
