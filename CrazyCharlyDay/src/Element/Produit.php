@@ -28,11 +28,15 @@ class Produit {
         $this->distance = $distance;
         $this->latitude = $latitude;
         $this->longitude = $longitude;
-        $this->img = $prix;
+        $this->img = $img;
     }
 
     public function __get(string $at):mixed {
         if (property_exists ($this, $at)) return $this->$at;
         else throw new \Exception ("$at: invalid property");
+    }
+
+    public function render(){
+        echo ($this->nom." ".$this->prix." ".$this->description);
     }
 }

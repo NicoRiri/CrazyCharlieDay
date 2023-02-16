@@ -103,13 +103,15 @@ class Dispatcher
     {
         $co = "";
         if (isset($_SESSION['connexion'])){
-            $tPREF = $_SESSION['connexion']->getPreference();
+            //$tPREF = $_SESSION['connexion']->getPreference();
             $string = "<h3>Séries preférées</h3><ul class = 'test'>";
+            /*
             foreach ($tPREF as $t => $v) {
                 $string .= <<<END
                 <li><a href="index.php?action=DisplaySerieAction&idserie=$v->id">$v->titre</a></li>
                 END;
             }
+            */
             $string .= "</ul>";
             $co = <<<END
             <li><a href="index.php?action=deconnexion">Déconnexion</a></li><BR>
