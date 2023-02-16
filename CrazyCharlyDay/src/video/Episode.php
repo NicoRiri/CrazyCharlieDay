@@ -1,8 +1,8 @@
 <?php
 
-namespace NetVOD\video;
+namespace ccd\video;
 
-use NetVOD\db\ConnectionFactory;
+use ccd\db\ConnectionFactory;
 
 class Episode
 {
@@ -34,7 +34,7 @@ class Episode
         if (property_exists($this, $at)) {
             return $this->$at;
         }
-        throw new  \NetVOD\Exception\InvalidPropertyNameException("$at: invalid property");
+        throw new  \ccd\Exception\InvalidPropertyNameException("$at: invalid property");
 
     }
     
@@ -46,7 +46,7 @@ class Episode
         and serie.id= ?
         and serie.id=episode.serie_id";
 
-        $stmt = \NetVOD\db\ConnectionFactory::$db->prepare($sql);
+        $stmt = \ccd\db\ConnectionFactory::$db->prepare($sql);
         $stmt->bindParam(1, $this->id);
         $stmt->bindParam(2, $this->serie_id);
         $stmt->execute();
@@ -57,7 +57,7 @@ class Episode
         where episode.id=?
         and serie.id= ?
         and serie.id=episode.serie_id";
-        $stmt = \NetVOD\db\ConnectionFactory::$db->prepare($sql2);
+        $stmt = \ccd\db\ConnectionFactory::$db->prepare($sql2);
         $stmt->bindParam(1, $this->id);
         $stmt->bindParam(2, $this->serie_id);
         $stmt->execute();

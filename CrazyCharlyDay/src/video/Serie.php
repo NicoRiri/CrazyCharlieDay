@@ -1,9 +1,9 @@
 <?php
 
-namespace NetVOD\video;
+namespace ccd\video;
 
-use NetVOD\db\ConnectionFactory;
-use \NetVOD\Exception\InvalidPropertyNameException;
+use ccd\db\ConnectionFactory;
+use \ccd\Exception\InvalidPropertyNameException;
 
 class Serie
 {
@@ -41,7 +41,7 @@ class Serie
         if (property_exists($this, $at)) {
             return $this->$at;
         }
-        throw new  \NetVOD\Exception\InvalidPropertyNameException("$at: invalid property");
+        throw new  \ccd\Exception\InvalidPropertyNameException("$at: invalid property");
 
     }
 
@@ -55,11 +55,11 @@ class Serie
     public function insertEpisode(): array
     {
         $sql = "select * from episode where episode.serie_id = ?";
-        $stmt = \NetVOD\db\ConnectionFactory::$db->prepare($sql);
+        $stmt = \ccd\db\ConnectionFactory::$db->prepare($sql);
         $stmt->bindParam(1, $this->id);
         $stmt->execute();
         while ($data = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-            $tab[] = new \NetVOD\video\Episode($data['id'], $data['numero'], $data['duree'], $data['serie_id'], $data['titre'], $data['resume'], $data['file']);
+            $tab[] = new \ccd\video\Episode($data['id'], $data['numero'], $data['duree'], $data['serie_id'], $data['titre'], $data['resume'], $data['file']);
         }
         return $tab;
     }

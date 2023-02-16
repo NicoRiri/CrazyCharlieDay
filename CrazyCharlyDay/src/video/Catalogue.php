@@ -1,8 +1,8 @@
 <?php
 
-namespace NetVOD\video;
+namespace ccd\video;
 
-use NetVOD\db\ConnectionFactory;
+use ccd\db\ConnectionFactory;
 
 class Catalogue
 {
@@ -29,7 +29,7 @@ class Catalogue
         if (property_exists($this, $at)) {
             return $this->$at;
         }
-        throw new  \NetVOD\Exception\InvalidPropertyNameException("$at: invalid property");
+        throw new  \ccd\Exception\InvalidPropertyNameException("$at: invalid property");
 
     }
 
