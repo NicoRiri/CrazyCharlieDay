@@ -18,79 +18,79 @@ class Dispatcher
     {
         switch ($this->action) {
             case 'DisplaySerieAction':
-                $stmt = new \NetVOD\action\DisplaySerieAction();
+                $stmt = new \ccd\action\DisplaySerieAction();
                 $str = $stmt->execute();
                 $this->renderPage($str);
                 break;
             case 'DisplayCatalogueAction':
-                $stmt = new \NetVOD\action\DisplayCatalogueAction();
+                $stmt = new \ccd\action\DisplayCatalogueAction();
                 $str = $stmt->execute();
                 $this->renderPage($str);
                 break;
             
             case 'DisplayEpisode':
-                $stmt = new \NetVOD\action\DisplayEpisode();
+                $stmt = new \ccd\action\DisplayEpisode();
                 $str = $stmt->execute();
                 $this->renderPage($str);
                 break;
 
             case 'identification':
-                $stmt = new \NetVOD\action\IdentificationAction();
+                $stmt = new \ccd\action\IdentificationAction();
                 $str = $stmt->execute();
                 $this->renderPage($str);
                 break;
 
             case 'inscription':
-                $stmt = new \NetVOD\action\InscriptionAction();
+                $stmt = new \ccd\action\InscriptionAction();
                 $str = $stmt->execute();
                 $this->renderPage($str);
                 break;
 
             case 'DisplaySerieEnCoursAction':
-                $stmt = new \NetVOD\action\DisplaySerieEnCoursAction();
+                $stmt = new \ccd\action\DisplaySerieEnCoursAction();
                 $str = $stmt->execute();
                 $this->renderPage($str);
                 break;
 
             case 'ajouterinfo':
-                $stmt = new \NetVOD\action\AjouterPlusInfoAction();
+                $stmt = new \ccd\action\AjouterPlusInfoAction();
                 $str = $stmt->execute();
                 $this->renderPage($str);
                 break;
             case 'DisplayCommentaire':
-                $stmt = new \NetVOD\action\DisplayCommentaire();
+                $stmt = new \ccd\action\DisplayCommentaire();
                 $str = $stmt->execute();
                 $this->renderPage($str);
                 break;
 
             case 'activationToken':
-                $stmt = new \NetVOD\action\ActivationTokenAction();
+                $stmt = new \ccd\action\ActivationTokenAction();
                 $str = $stmt->execute();
                 $this->renderPage($str);
                 break;
 
             case 'DisplaySerieTermine':
-                $stmt = new \NetVOD\action\DisplaySerieTermine();
+                $stmt = new \ccd\action\DisplaySerieTermine();
                 $str = $stmt->execute();
                 $this->renderPage($str);
                 break;
 
             case 'mdpOublie':
-                $stmt = new \NetVOD\action\MdpOublieAction();
+                $stmt = new \ccd\action\MdpOublieAction();
                 $str = $stmt->execute();
                 $this->renderPage($str);
                 break;
 
             case 'deconnexion':
                 "oui";
-                $stmt = new \NetVOD\action\DeconnexionAction();
+                $stmt = new \ccd\action\DeconnexionAction();
                 $str = $stmt->execute();
                 $this->renderPage($str);
                 break;
 
             default :
                 $str = "<H1>Bienvenue sur Netvod</H1><br>";
-                $stmt = new \NetVOD\action\DisplayProfileAction();
+                $stmt = new \ccd\action\DisplayProfileAction();
                 $str .= $stmt->execute();
                 $this->renderPage($str);
                 break;
