@@ -1,77 +1,135 @@
 body{
-    background-color:#051C24 ;
+    margin : 0;
+    background-image: url('Images/photo_edition_sila.png');
+    background-attachment: fixed;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.monpetitheader{
+    padding: 5px 0px 5px 0px;
+    background-color : #062925;
+    margin: 0px;
+    margin-bottom: 20px;
+    margin-inside: 0px;
+    padding-bottom: 5px;
     color : white;
-    text-align: justify;
+    opacity: 0.9;
+}
+
+.pasdidee{
+    margin : 5px;
+    color : white;
+    text-align: center;
+}
+
+.pasdidee1{
+    font-size: 20px;
+    padding-top: 150px;
+    padding-bottom: 10px;
+}
+
+.pasdidee2{
+    font-size: 50px;
+    padding-bottom: 100px;
+    font-weight: bold;
+}
+
+.pasdidee3{
+    font-size: 50px;
+    font-weight: bold;
+    font-size: 60px;
+    color : white;
+    transition-duration: 0.5s;
+    text-decoration: none;
+    border-radius: 30px;
+    padding : 0px 20px 0px 20px;
+    border-radius: 100px;
+    background-color: #044a42;
+}
+
+.pasdidee3:hover{
+    font-size: 50px;
+    font-weight: bold;
+    font-size: 60px;
+    color : white;
+    text-decoration: none;
+    background-color: white;
+    color : #044a42;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+.titre_header{
+    margin-left : 20px;
+}
+
+
+.synopsis{
+    margin: 0;
+    padding: 50px;
+    background-color : #b1bed5;
+    text-align: center;
+    margin :30px 50px 30px 50px;
+    color : white;
+    opacity: 0.9;
+    background-color : #044a42;
+
+}
+
+.sign{
+    text-align: center;
+}
+
+.sectionlog{
+    margin: 20px 12px 20px 12px;
+    padding: 50px;
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+    align-content: center;
+    alignment: center;
+    background-color : #044a42;
+    color : white;
+    opacity: 0.9
+
+
+}
+
+.sectionsign{
+    margin: 20px 12px 20px 12px;
+    padding: 50px;
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+    align-content: center;
+    alignment: center;
+    background-color : #044a42;
+    color : white;
+    opacity: 0.9;
+
+}
+
+.synopsis h1{
+    padding:0;
+    margin:0px 0px 15px 0px;
+    font-size: 50px;
+
+}
+
+.synopsis p{
+    margin:0;
+    padding:0;
+    color:white;
     font-size: 20px;
 }
-
-h1{
-    font-size:40px;
-}
-
-.notreh1{
-    color:red;
-    text-align: center;
-    font-size: 50px;
-}
-
-
-
-a{
-    color: #04BBFF;
-    text-decoration: none;
-    transition-duration: 0.2s;
-}
-
-ul{
-    list-style-type: none;
-}
-
-.test{
-    list-style-type: decimal;
-    color : #0594D0;
-}
-
-.test li a {
-    color : #04BBFF;
-    transition-duration: 0.2s;
-}
-
-.test li a:hover {
-    color:red;
-    transition-duration: 0.2s;
-    text-decoration: underline;
-}
-
-a:hover{
-    color:red;
-    transition-duration: 0.2s;
-    text-decoration: underline;
-}
-
-
-figure {
-    float: left;
-    width: 30%;
-    text-align: center;
-    font-style: italic;
-    font-size: smaller;
-    text-indent: 0;
-    border: thin silver solid;
-    margin: 0.4em;
-    padding: 0.4em;
-  }
-  img{
-    width: 200px;
-    max-height: 100px;
-  }
-
-  div{
-    font-style: italic;
-  }
-
-  .jpp{
-    background-color:#0b3b4b;
-    color: white;
-  }
-

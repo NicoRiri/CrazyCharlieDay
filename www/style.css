@@ -61,11 +61,13 @@ body{
 }
 
 html {
-    scroll-behavior: auto; /* désactiver la fonction de défilement automatique */
+    scroll-behavior: smooth;
 }
 
-a[href^="#"] {
-    scroll-behavior: smooth !important;
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 .titre_header{
