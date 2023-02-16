@@ -2,8 +2,6 @@
 
 namespace ccd\dispatch;
 
-use ccd\Element\User;
-
 class Dispatcher
 {
     private $action;
