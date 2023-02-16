@@ -1,6 +1,6 @@
 <?php
 
-namespace ccd\User;
+namespace ccd\Element;
 
 use ccd\db\ConnectionFactory;
 use ccd\video\Serie;

@@ -2,7 +2,7 @@
 
 namespace ccd\dispatch;
 
-use ccd\User\User;
+use ccd\Element\User;
 
 class Dispatcher
 {
@@ -28,8 +28,8 @@ class Dispatcher
                 $this->renderPage($str);
                 break;
             
-            case 'DisplayEpisode':
-                $stmt = new \ccd\action\DisplayEpisode();
+            case 'DisplayProduit':
+                $stmt = new \ccd\action\DisplayProduit();
                 $str = $stmt->execute();
                 $this->renderPage($str);
                 break;

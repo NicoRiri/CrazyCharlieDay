@@ -5,7 +5,7 @@ use Exception;
 use ccd\action\ActivationTokenAction;
 use ccd\action\InscriptionAction;
 use ccd\db\ConnectionFactory;
-use ccd\User\User;
+use ccd\Element\User;
 use PDO;
 
 class Auth{
