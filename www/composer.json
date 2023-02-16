@@ -1,0 +1,9 @@
+{
+  "name": "iutnc/crazy_charly_day",
+  "autoload": {
+    "psr-4": {
+      "ccd\\": "src/"
+    }
+  },
+  "require": {}
+}

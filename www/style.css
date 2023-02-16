@@ -1,0 +1,133 @@
+body{
+    margin : 0;
+    background-image: url('Images/photo_edition_sila.png');
+    background-attachment: fixed;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.monpetitheader{
+    padding: 5px 0px 5px 0px;
+    background-color : #062925;
+    margin: 0px;
+    margin-bottom: 20px;
+    margin-inside: 0px;
+    padding-bottom: 5px;
+    color : white;
+    opacity: 0.9;
+}
+
+.pasdidee{
+    margin : 5px;
+    color : white;
+    text-align: center;
+}
+
+.pasdidee1{
+    font-size: 20px;
+    padding-top: 150px;
+    padding-bottom: 10px;
+}
+
+.pasdidee2{
+    font-size: 50px;
+    padding-bottom: 100px;
+    font-weight: bold;
+}
+
+.pasdidee3{
+    font-size: 50px;
+    font-weight: bold;
+    font-size: 60px;
+    color : white;
+    transition-duration: 0.5s;
+    text-decoration: none;
+    border-radius: 30px;
+    padding : 0px 20px 0px 20px;
+    border-radius: 100px;
+    background-color: #044a42;
+}
+
+.pasdidee3:hover{
+    font-size: 50px;
+    font-weight: bold;
+    font-size: 60px;
+    color : white;
+    text-decoration: none;
+    background-color: white;
+    color : #044a42;
+
+}
+
+html {
+    scroll-behavior: auto; /* désactiver la fonction de défilement automatique */
+}
+
+a[href^="#"] {
+    scroll-behavior: smooth !important;
+}
+
+.titre_header{
+    margin-left : 20px;
+}
+
+
+.synopsis{
+    margin: 0;
+    padding: 50px;
+    background-color : #b1bed5;
+    text-align: center;
+    margin :30px 50px 30px 50px;
+    color : white;
+    opacity: 0.9;
+    background-color : #044a42;
+
+}
+
+.sign{
+    text-align: center;
+}
+
+.sectionlog{
+    margin: 20px 12px 20px 12px;
+    padding: 50px;
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+    align-content: center;
+    alignment: center;
+    background-color : #044a42;
+    color : white;
+    opacity: 0.9
+
+
+}
+
+.sectionsign{
+    margin: 20px 12px 20px 12px;
+    padding: 50px;
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+    align-content: center;
+    alignment: center;
+    background-color : #044a42;
+    color : white;
+    opacity: 0.9;
+
+}
+
+.synopsis h1{
+    padding:0;
+    margin:0px 0px 15px 0px;
+    font-size: 50px;
+
+}
+
+.synopsis p{
+    margin:0;
+    padding:0;
+    color:white;
+    font-size: 20px;
+}
