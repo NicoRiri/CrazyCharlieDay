@@ -3,6 +3,7 @@
 namespace ccd\action;
 
 use ccd\db\ConnectionFactory;
+use ccd\Element\Catalogue as ElementCatalogue;
 use ccd\video\Catalogue;
 use ccd\video\Serie;
 
@@ -17,7 +18,7 @@ class DisplaySerieTermine extends \ccd\action\Action
             $seriesUtilisateur = [];
             $connection = ConnectionFactory::makeConnection();
             //on recupere tous les series
-            $catalogue = new Catalogue();
+            $catalogue = new ElementCatalogue;
             $listeSerie = $catalogue->series;
 
             foreach ($listeSerie as $key => $value) {

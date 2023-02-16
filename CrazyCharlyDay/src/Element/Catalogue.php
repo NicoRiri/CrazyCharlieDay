@@ -1,8 +1,9 @@
 <?php
 
-namespace ccd\video;
+namespace ccd\Element;
 
 use ccd\db\ConnectionFactory;
+use ccd\video\Serie;
 
 class Catalogue
 {

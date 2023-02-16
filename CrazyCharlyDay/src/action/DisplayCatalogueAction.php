@@ -2,6 +2,7 @@
 
 namespace ccd\action;
 
+use ccd\Element\Catalogue as ElementCatalogue;
 use ccd\exception\AuthException;
 use ccd\video\Catalogue;
 
@@ -19,7 +20,7 @@ class DisplayCatalogueAction extends Action
 
         if ($this->http_method == "GET") {
             if (!isset($_SESSION['connexion']->email)) {
-                $catalogue = new Catalogue();
+                $catalogue = new ElementCatalogue();
 
 
                 $html = <<<END
@@ -69,7 +70,7 @@ class DisplayCatalogueAction extends Action
             }
 
         } elseif ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $catalogue = new \ccd\video\Catalogue();
+            $catalogue = new \ccd\Element\Catalogue();
             if (isset($_POST['recherche']) && !empty($_POST['recherche'])) {
                 $search = $_POST['recherche'];
                 $catalogue->insertRecherche($search);
