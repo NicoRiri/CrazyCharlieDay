@@ -3,7 +3,7 @@ require_once 'vendor/autoload.php';
 session_start();
 
 try{
-    \ccd\db\ConnectionFactory::setConfig('db.ini');
+    \ccd\db\ConnectionFactory::setConfig('./../db.ini');
     $db = \ccd\db\ConnectionFactory::makeConnection();
 }catch (Error $ignored){
     echo "problème avec la base de donnée.";
