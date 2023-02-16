@@ -10,7 +10,7 @@ class Panier
     public function __construct(string $user)
     {
         $this->produits = array();
-        $this->initialize();
+        $this->initialize($user);
     }
 
     public function __get(string $at): mixed
@@ -24,10 +24,11 @@ class Panier
         $this->produits[] = $produit;
     }
 
-    private function initialize(): void
+    private function initialize($user): void
     {
-        $sql = "select * from produit2user where user='{$this->user}'";
+        $sql = "select * from panier2user where user=?";
         $res = \ccd\db\ConnectionFactory::$db->prepare($sql);
+        $res->bindParam(1, $user);
         $res->execute();
         $c = new Catalogue();
         while ($row = $res->fetch(\PDO::FETCH_ASSOC)) {
