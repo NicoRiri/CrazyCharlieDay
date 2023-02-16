@@ -28,6 +28,7 @@ class User
         else throw new \Exception ("$at: invalid property");
     }
 
+    /*
     public function getPreference():array{
         $listVidePref = [];
         $sql = "SELECT serie.id, serie.titre
@@ -46,7 +47,7 @@ class User
         }
 
         return $listVidePref;
-    }
+    }*/
 
     public function getId():int{
         $id=0;
