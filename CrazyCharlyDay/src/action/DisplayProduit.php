@@ -28,13 +28,16 @@ class DisplayProduit extends Action
                 $html = <<<END
                 {$produit->render()}
                 END;
-            }
-            /*else {
+                $id_user = $_SESSION['connexion']->getId();
+
+                $this->ajoutProduitEnCours($produit, $id_user);
+
+            } else {
                 $html .= <<<END
                 <p><strong>Vous ne pouvez pas afficher le catalogue sans vous connecter au préalable !</strong></p>
                 END;
             }
-            */
+
         return $html;
     }
 

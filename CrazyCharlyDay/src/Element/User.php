@@ -9,12 +9,14 @@ class User
 {
     private string $email;
     private string $passwd;
+    private bool $adm = false;
 
 
-    public function __construct($email, $passwd)
+    public function __construct($email, $passwd, $adm = false)
     {
         $this->email = $email;
         $this->passwd = $passwd;
+        $this->adm = $adm;
     }
 
     public function __get(string $at):mixed {
@@ -63,4 +65,18 @@ class User
         return $id;
     }
 
+    public static function getAdmins(): array{
+        $admins = [];
+        $sql = "SELECT * FROM user WHERE admin = 1";
+        $res = ConnectionFactory::$db->prepare($sql);
+        $res->execute();
+
+        $i = 0;
+        while ($data = $res->fetch()){
+            $admin = new User($data[0],$data[1],$data[2]);
+            $admins[$i] = $admin;
+            $i++;
+        }
+        return $admins;
+    }
 }

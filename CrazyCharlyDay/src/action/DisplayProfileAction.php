@@ -3,6 +3,7 @@
 namespace ccd\action;
 
 use ccd\db\ConnectionFactory;
+use ccd\Element\User;
 
 class DisplayProfileAction extends Action
 {
@@ -10,6 +11,18 @@ class DisplayProfileAction extends Action
     public function execute(): string
     {
         $str = "";
+
+        if (isset($_SESSION['connexion'])) {
+            $id_user = $_SESSION['connexion'];
+            if (in_array($id_user, User::getAdmins())) {
+                //TODO
+            } else {
+                //TODO
+            }
+        }else{
+
+        }
+        /*
         if(isset($_SESSION['connexion'])){
             $email = $_SESSION['connexion']->email;
             $pdo = ConnectionFactory::makeConnection();
@@ -46,6 +59,7 @@ class DisplayProfileAction extends Action
         }else{
             $str.= 'vous etes pas connecté';
         }
+        */
         return $str;
     }
 }
