@@ -39,7 +39,7 @@ class Catalogue
             $res .= <<<END
             <li>
                 <figure>
-                    <img src='Images/$v->img' alt='Image du produit'>
+                    <img class="img" src='Images/$v->img' alt='Image du produit'>
                     <figcaption>
                         <a href="index.php?action=DisplayProduitAction&idproduit=$v->id">$v->nom</a>
                     </figcaption>
