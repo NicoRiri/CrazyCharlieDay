@@ -96,7 +96,7 @@ class Dispatcher
                 break;
         }
 
-
+        
     }
 
     private function renderPage(string $html): void
