@@ -89,7 +89,7 @@ class Dispatcher
                 break;
 
             default :
-                $str = "<H1>Bienvenue sur Netvod</H1><br>";
+                $str = "<H1>Bienvenue sur le Crazy Charly Day</H1><br>";
                 $stmt = new \ccd\action\DisplayProfileAction();
                 $str .= $stmt->execute();
                 $this->renderPage($str);
