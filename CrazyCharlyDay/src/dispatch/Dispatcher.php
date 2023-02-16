@@ -87,6 +87,12 @@ class Dispatcher
                 $str = $stmt->execute();
                 $this->renderPage($str);
                 break;
+            
+            case 'DisplayPanierAction':
+                $stmt = new \ccd\action\DisplayPanierAction();
+                $str = $stmt->execute();
+                $this->renderPage($str);
+                break;
 
             default :
                 $str = "<H1>Bienvenue sur le Crazy Charly Day</H1><br>";
@@ -117,6 +123,8 @@ class Dispatcher
             <li><a href="index.php?action=DisplaySerieEnCoursAction">Vos séries en cours</a></li><BR>
             <li><a href="index.php?action=DisplaySerieTermine">Vos séries terminées</a></li><BR>
             <li><a href="index.php?action=ajouterinfo">Ajouter information à votre profil</a></li><BR>
+            <li><a href="index.php?action=DisplayPanierAction">Panier</a></li><BR>
+
             $string
 
             END;
