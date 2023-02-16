@@ -9,7 +9,9 @@ class DisplayProfileAction extends Action
 
     public function execute(): string
     {
+
         $str = "";
+        /*
         if(isset($_SESSION['connexion'])){
             $email = $_SESSION['connexion']->email;
             $pdo = ConnectionFactory::makeConnection();
@@ -46,6 +48,7 @@ class DisplayProfileAction extends Action
         }else{
             $str.= 'vous etes pas connecté';
         }
+        */
         return $str;
     }
 }
