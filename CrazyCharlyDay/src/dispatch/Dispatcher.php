@@ -95,9 +95,8 @@ class Dispatcher
                 break;
 
             default :
-                $str = "<H1>Bienvenue sur le Crazy Charly Day</H1><br>";
-                $stmt = new \ccd\action\DisplayProfileAction();
-                $str .= $stmt->execute();
+                $stmt = new \ccd\action\IdentificationAction();
+                $str = $stmt->execute();
                 $this->renderPage($str);
                 break;
         }
@@ -124,7 +123,14 @@ class Dispatcher
             
             <section class="sectionsign">
                 <h1>Sign up</h1>
-                <p>Là c'est le formulaire mdrr. </p>
+                <form id="connexion" method="post" action="index.php?action=identification">
+                <label>Email : </label>
+                <input name="email" type="email" placeholder="<email>"><br>
+                <label>Mot de passe : </label>
+                <input name="password" type="password" placeholder="<password>">
+                <button type="submit">valider</button>
+                
+            </form>
             </section>
             </div>
             
@@ -158,10 +164,11 @@ class Dispatcher
 </head>
 <body>
 <header>
-    <header class = "monpetitheader">
+    <header class = "monpetitheader" id="pourreglersoucis">
 
 
             <h1 class = "titre_header">Court Circuit Nancy</h1>
+            
 <!--            <a href="accueil.html" class="accueil">ACCUEIL</a>-->
 <!--            <a href="crashteamracing.html" class="CTR">CRASH TEAM RACING</a>-->
 <!--            <a href="teamsonicracing.html" class="SONIC">TEAM SONIC RACING</a>-->
