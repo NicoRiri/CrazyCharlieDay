@@ -39,12 +39,10 @@ class Catalogue
             $res .= <<<END
             <li>
                 <figure>
-                    <img src='img/$v->img' alt='img de la série'>
+                    <img src='Images/$v->img' alt='Image du produit'>
                     <figcaption>
                         <a href="index.php?action=DisplayProduitAction&idproduit=$v->id">$v->nom</a>
                     </figcaption>
-                    <p>$v->prix</p>
-                    <p>$v->lieu</p>
                 </figure>
             </li>
             END;
@@ -52,6 +50,7 @@ class Catalogue
 
         return $res . "</ul>";
     }
+
 
     public function tri($ordre, $attribut)
     {
@@ -94,8 +93,8 @@ class Catalogue
 
     public function filtre_public(string $string){
         if ($string != ""){
-            foreach($this->produits as $key => $serie){
-                if ($serie->public!=$string) unset($this->produits[$key]);
+            foreach($this->produits as $key => $prod){
+                if ($prod->public!=$string) unset($this->produits[$key]);
             }
         }
     }
