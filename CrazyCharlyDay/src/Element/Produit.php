@@ -6,7 +6,7 @@ class Produit {
     private int $id;
     private int $categorie;
     private string $nom;
-    private double $prix;
+    private float $prix;
     private int $poids;
     private string $description;
     private string $detail;
