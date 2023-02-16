@@ -33,6 +33,7 @@ class DisplayPanierAction extends Action
                         }
                     }
                 }
+                $html .= "</table>";
             }
         } elseif ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
