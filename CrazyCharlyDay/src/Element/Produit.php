@@ -14,8 +14,9 @@ class Produit {
     private int $distance;
     private float $latitude;
     private float $longitude;
+    private string $img;
 
-    public function __construct($id,$categorie,$nom,$prix,$poids,$description,$detail,$lieu,$distance,$latitude,$longitude){
+    public function __construct($id,$categorie,$nom,$prix,$poids,$description,$detail,$lieu,$distance,$latitude,$longitude,$img){
         $this->id = $id;
         $this->categorie = $categorie;
         $this->nom = $nom;
@@ -27,6 +28,7 @@ class Produit {
         $this->distance = $distance;
         $this->latitude = $latitude;
         $this->longitude = $longitude;
+        $this->img = $prix;
     }
 
     public function __get(string $at):mixed {

@@ -3,25 +3,22 @@
 namespace ccd\Element;
 
 use ccd\db\ConnectionFactory;
-use ccd\video\Serie;
 
 class Catalogue
 {
-    protected array $series;
+    protected array $produits;
 
     public function __construct()
     {
-        $this->series = [];
-        $sql = "select serie.id, titre, descriptif, img, annee, date_ajout, genre.libelle_genre, public.libelle_public
-        from serie, genre, public
-        where serie.id_public=public.id
-        and serie.no_genre=genre.id_genre";
+        $this->produits = [];
+        $sql = "select id, categorie, nom, prix, poids, description, detail, lieu, distance, latitude, longitude, img
+        from produit";
         $res = ConnectionFactory::$db->prepare($sql);
         $res->execute();
 
         while ($data = $res->fetch()) {
-            $s = new Serie($data[0], $data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7]);
-            array_push($this->series, $s);
+            $s = new Produit($data[0], $data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7], $data[8], $data[9], $data[10], $data[11]);
+            array_push($this->produits, $s);
         }
     }
 
@@ -38,9 +35,18 @@ class Catalogue
     {
         $res = "<ul>";
 
-        foreach ($this->series as $tS => $v) {
+        foreach ($this->produits as $tP => $v) {
             $res .= <<<END
-            <li><figure><img src='img/$v->img' alt='img de la série'><figcaption><a href="index.php?action=DisplaySerieAction&idserie=$v->id">$v->titre</a></figcaption></figure></li>
+            <li>
+                <figure>
+                    <img src='img/$v->img' alt='img de la série'>
+                    <figcaption>
+                        <a href="index.php?action=DisplayProduitAction&idproduit=$v->id">$v->nom</a>
+                    </figcaption>
+                    <p>$v->prix</p>
+                    <p>$v->lieu</p>
+                </figure>
+            </li>
             END;
         }
 
@@ -51,45 +57,45 @@ class Catalogue
     {
         if ($attribut === "nb_episode") {
             if ($ordre === 'croissant') {
-                usort($this->series, fn($a, $b) => sizeof($a->episode) <=> sizeof($b->episode));
+                usort($this->produits, fn($a, $b) => sizeof($a->episode) <=> sizeof($b->episode));
             } elseif ($ordre === 'decroissant') {
-                usort($this->series, fn($a, $b) => sizeof($b->episode) <=> sizeof($a->episode));
+                usort($this->produits, fn($a, $b) => sizeof($b->episode) <=> sizeof($a->episode));
             }
         } elseif ($attribut === "note") {
             if ($ordre === 'croissant') {
-                usort($this->series, fn($a, $b) => $a->calculnote() <=> $b->calculnote());
+                usort($this->produits, fn($a, $b) => $a->calculnote() <=> $b->calculnote());
             } elseif ($ordre === 'decroissant') {
-                usort($this->series, fn($a, $b) => $b->calculnote() <=> $a->calculnote());
+                usort($this->produits, fn($a, $b) => $b->calculnote() <=> $a->calculnote());
             }
         } elseif ($ordre == 'croissant') {
-            usort($this->series, fn($a, $b) => $a->$attribut <=> $b->$attribut);
+            usort($this->produits, fn($a, $b) => $a->$attribut <=> $b->$attribut);
         } elseif ($ordre === 'decroissant') {
-            usort($this->series, fn($a, $b) => $b->$attribut <=> $a->$attribut);
+            usort($this->produits, fn($a, $b) => $b->$attribut <=> $a->$attribut);
         }
 
     }
 
     public function insertRecherche(string $search)
     {
-        foreach ($this->series as $key => $serie) {
+        foreach ($this->produits as $key => $serie) {
             if ((!str_contains($serie->titre, $search)) && (!str_contains($serie->descriptif, $search))) {
-                unset($this->series[$key]);
+                unset($this->produits[$key]);
             }
         }
     }
 
     public function filtre_genre(string $string){
         if ($string !=""){
-            foreach($this->series as $key => $serie){
-                if ($serie->genre!=$string) unset($this->series[$key]);
+            foreach($this->produits as $key => $serie){
+                if ($serie->genre!=$string) unset($this->produits[$key]);
             }
         } 
     }
 
     public function filtre_public(string $string){
         if ($string != ""){
-            foreach($this->series as $key => $serie){
-                if ($serie->public!=$string) unset($this->series[$key]);
+            foreach($this->produits as $key => $serie){
+                if ($serie->public!=$string) unset($this->produits[$key]);
             }
         }
     }
