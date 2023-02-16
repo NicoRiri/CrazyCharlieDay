@@ -1,8 +1,8 @@
 <?php
 
-namespace NetVOD\action;
+namespace ccd\action;
 
-use NetVOD\video\Episode;
+use ccd\video\Episode;
 
 class DisplayEpisode extends Action
 {

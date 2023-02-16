@@ -1,9 +1,9 @@
 <?php
 
-namespace NetVOD\action;
+namespace ccd\action;
 
-use NetVOD\db\ConnectionFactory;
-use NetVOD\video\Serie;
+use ccd\db\ConnectionFactory;
+use ccd\video\Serie;
 
 class DisplaySerieEnCoursAction extends \NetVOD\action\Action
 {

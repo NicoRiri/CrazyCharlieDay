@@ -1,9 +1,9 @@
 <?php
 
-namespace NetVOD\action;
+namespace ccd\action;
 
-use NetVOD\exception\AuthException;
-use NetVOD\video\Catalogue;
+use ccd\exception\AuthException;
+use ccd\video\Catalogue;
 
 class DisplayCatalogueAction extends Action
 {

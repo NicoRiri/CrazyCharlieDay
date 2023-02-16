@@ -1,8 +1,8 @@
 {
-  "name": "iutnc/netvod",
+  "name": "iutnc/crazy_charly_day",
   "autoload": {
     "psr-4": {
-      "NetVOD\\": "src/"
+      "ccd\\": "src/"
     }
   },
   "require": {}

@@ -1,6 +1,6 @@
 <?php
 
-namespace NetVOD\action;
+namespace ccd\action;
 
 class AjouterPreferenceAction
 {

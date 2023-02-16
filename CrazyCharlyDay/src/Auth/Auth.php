@@ -1,5 +1,5 @@
 <?php
-namespace NetVOD\Auth;
+namespace ccd\Auth;
 
 use Exception;
 use NetVOD\action\ActivationTokenAction;

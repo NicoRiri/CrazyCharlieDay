@@ -1,10 +1,10 @@
 <?php
 
-namespace NetVod\action;
+namespace ccd\action;
 
-use NetVOD\db\ConnectionFactory;
-use NetVOD\video\Catalogue;
-use NetVOD\video\Serie;
+use ccd\db\ConnectionFactory;
+use ccd\video\Catalogue;
+use ccd\video\Serie;
 
 class DisplaySerieTermine extends \NetVOD\action\Action
 {

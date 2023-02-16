@@ -1,6 +1,6 @@
 <?php
 
-namespace NetVOD\Exception;
+namespace ccd\Exception;
 
 class InvalidPropertyNameException extends \Exception
 {

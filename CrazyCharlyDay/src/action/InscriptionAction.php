@@ -1,8 +1,8 @@
 <?php
 
-namespace NetVOD\action;
+namespace ccd\action;
 
-use NetVOD\Auth\Auth;
+use ccd\Auth\Auth;
 
 class InscriptionAction extends Action
 {

@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => 'iutnc/netvod',
+        'name' => 'iutnc/crazy_charly_day',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'fdb397720c2ff086f51a4adb7773efdb4c5c0cec',
+        'reference' => 'cdc385e3d634d5976831ab51246854fa9c0d621d',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'iutnc/netvod' => array(
+        'iutnc/crazy_charly_day' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'fdb397720c2ff086f51a4adb7773efdb4c5c0cec',
+            'reference' => 'cdc385e3d634d5976831ab51246854fa9c0d621d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

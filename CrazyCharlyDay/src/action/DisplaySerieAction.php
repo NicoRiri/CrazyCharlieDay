@@ -1,10 +1,10 @@
 <?php
 
-namespace NetVOD\action;
+namespace ccd\action;
 
-use NetVOD\action\Action;
-use NetVOD\db\ConnectionFactory;
-use NetVOD\video\Serie;
+use ccd\action\Action;
+use ccd\db\ConnectionFactory;
+use ccd\video\Serie;
 
 use function PHPSTORM_META\type;
 

@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInit8fe97c5665d239a4f3c857c5b1e30c00
 {
     public static $prefixLengthsPsr4 = array (
-        'N' => 
+        'c' => 
         array (
-            'NetVOD\\' => 7,
+            'ccd\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'NetVOD\\' => 
+        'ccd\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

@@ -1,8 +1,8 @@
 <?php
 
-namespace NetVOD\dispatch;
+namespace ccd\dispatch;
 
-use NetVOD\User\User;
+use ccd\User\User;
 
 class Dispatcher
 {

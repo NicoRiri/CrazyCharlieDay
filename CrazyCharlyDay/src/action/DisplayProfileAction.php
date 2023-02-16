@@ -1,8 +1,8 @@
 <?php
 
-namespace NetVOD\action;
+namespace ccd\action;
 
-use NetVOD\db\ConnectionFactory;
+use ccd\db\ConnectionFactory;
 
 class DisplayProfileAction extends Action
 {

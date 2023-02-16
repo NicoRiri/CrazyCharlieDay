@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'NetVOD\\' => array($baseDir . '/src'),
+    'ccd\\' => array($baseDir . '/src'),
 );

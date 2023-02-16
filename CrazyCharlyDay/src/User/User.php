@@ -1,6 +1,6 @@
 <?php
 
-namespace NetVOD\User;
+namespace ccd\User;
 
 use NetVOD\db\ConnectionFactory;
 use NetVOD\video\Serie;
