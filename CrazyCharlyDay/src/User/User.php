@@ -2,8 +2,8 @@
 
 namespace ccd\User;
 
-use NetVOD\db\ConnectionFactory;
-use NetVOD\video\Serie;
+use ccd\db\ConnectionFactory;
+use ccd\video\Serie;
 
 class User
 {

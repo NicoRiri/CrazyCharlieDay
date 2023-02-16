@@ -2,10 +2,10 @@
 namespace ccd\Auth;
 
 use Exception;
-use NetVOD\action\ActivationTokenAction;
-use NetVOD\action\InscriptionAction;
-use NetVOD\db\ConnectionFactory;
-use NetVOD\User\User;
+use ccd\action\ActivationTokenAction;
+use ccd\action\InscriptionAction;
+use ccd\db\ConnectionFactory;
+use ccd\User\User;
 use PDO;
 
 class Auth{

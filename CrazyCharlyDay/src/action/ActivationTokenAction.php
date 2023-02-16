@@ -2,7 +2,7 @@
 
 namespace ccd\action;
 
-use NetVOD\Auth\Auth;
+use ccd\Auth\Auth;
 
 class ActivationTokenAction extends Action
 {
