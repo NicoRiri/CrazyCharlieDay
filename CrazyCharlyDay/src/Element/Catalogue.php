@@ -3,48 +3,54 @@
 namespace ccd\Element;
 
 use ccd\db\ConnectionFactory;
-use mysql_xdevapi\Exception;
 
 class Catalogue
 {
     protected array $produits;
+    private int $numPage;
+    private array $tabFiveProd;
 
     public function __construct()
     {
+
         $this->produits = [];
         $sql = "select id, categorie, nom, prix, poids, description, detail, lieu, distance, latitude, longitude, img
         from produit";
         $res = ConnectionFactory::$db->prepare($sql);
         $res->execute();
 
+        $i = 0;
         while ($data = $res->fetch()) {
             $s = new Produit($data[0], $data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7], $data[8], $data[9], $data[10], $data[11]);
-            array_push($this->produits, $s);
+            $this->produits[$i] = $s;
+            $i++;
         }
+        
+        
+        $this->numPage = 1;
     }
 
     public function __get(string $at): mixed
     {
         if (property_exists($this, $at)) {
             return $this->$at;
-        } else {
-        throw new Exception("plouf");
         }
+        
+
     }
-
-
 
     public function render(): string
     {
         $res = "<ul>";
 
-        foreach ($this->produits as $tP => $v) {
+        foreach ($this->tabFiveProd[$this->numPage-1] as $tP => $v) {
+            
             $res .= <<<END
             <li>
                 <figure>
-                    <img class="img" src='Images/$v->img' alt='Image du produit'>
+                    <img src='Images/$v->img' alt='Image du produit'>
                     <figcaption>
-                        <a href="index.php?action=DisplayProduit&idproduit=$v->id">$v->nom</a>
+                        <a href="index.php?action=DisplayProfileAction&idproduit=$v->id">$v->nom</a>
                     </figcaption>
                 </figure>
             </li>
@@ -99,6 +105,49 @@ class Catalogue
             foreach($this->produits as $key => $prod){
                 if ($prod->public!=$string) unset($this->produits[$key]);
             }
+        }
+    }
+
+    public function nbPages() : string
+    {
+        $nbPage = sizeof($this->produits)/5;
+        if (sizeof($this->produits)%5>0){
+            $nbPage++;
+        }
+        for ($j = 0 ; $j < $nbPage ; $j++){
+            $this->tabFiveProd[$j] = null;
+        }
+        return $nbPage;
+
+    }
+
+    public function tabProdPage()
+    {
+        $ori = $this->produits;
+
+        $res = [];
+        
+        for ($i = 0; $i <= count($this->produits); $i++) {
+          $sub_array = array_slice($ori, $i * 5, 5);
+          $res[$i] = $sub_array;
+        }
+
+        $this->tabFiveProd = $res;
+
+        
+    }
+
+    public function setPagePlus()
+    {
+        if ($this->numPage<$this->nbPages()){
+            $this->numPage++;
+        }
+    }
+
+    public function setPageMoins()
+    {
+        if ($this->numPage > $this->nbPages()){
+            $this->numPage--;
         }
     }
 }
