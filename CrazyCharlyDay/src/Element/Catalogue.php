@@ -3,6 +3,7 @@
 namespace ccd\Element;
 
 use ccd\db\ConnectionFactory;
+use mysql_xdevapi\Exception;
 
 class Catalogue
 {
@@ -26,10 +27,12 @@ class Catalogue
     {
         if (property_exists($this, $at)) {
             return $this->$at;
+        } else {
+        throw new Exception("plouf");
         }
-        throw new  \ccd\Exception\InvalidPropertyNameException("$at: invalid property");
-
     }
+
+
 
     public function render(): string
     {

@@ -17,11 +17,6 @@ class Dispatcher
     public function run(): void
     {
         switch ($this->action) {
-            case 'DisplaySerieAction':
-                $stmt = new \ccd\action\DisplaySerieAction();
-                $str = $stmt->execute();
-                $this->renderPage($str,"", "");
-                break;
             case 'DisplayCatalogueAction':
                 $stmt = new \ccd\action\DisplayCatalogueAction();
                 $str = $stmt->execute();
@@ -46,40 +41,6 @@ class Dispatcher
                 $this->renderPage("",$str, "");
                 break;
 
-            case 'DisplaySerieEnCoursAction':
-                $stmt = new \ccd\action\DisplaySerieEnCoursAction();
-                $str = $stmt->execute();
-                $this->renderPage($str, "", "");
-                break;
-
-            case 'ajouterinfo':
-                $stmt = new \ccd\action\AjouterPlusInfoAction();
-                $str = $stmt->execute();
-                $this->renderPage($str, "", "");
-                break;
-            case 'DisplayCommentaire':
-                $stmt = new \ccd\action\DisplayCommentaire();
-                $str = $stmt->execute();
-                $this->renderPage($str, "", "");
-                break;
-
-            case 'activationToken':
-                $stmt = new \ccd\action\ActivationTokenAction();
-                $str = $stmt->execute();
-                $this->renderPage($str, "", "");
-                break;
-
-            case 'DisplaySerieTermine':
-                $stmt = new \ccd\action\DisplaySerieTermine();
-                $str = $stmt->execute();
-                $this->renderPage($str, "", "");
-                break;
-
-            case 'mdpOublie':
-                $stmt = new \ccd\action\MdpOublieAction();
-                $str = $stmt->execute();
-                $this->renderPage($str, "", "");
-                break;
 
             case 'deconnexion':
                 "oui";
@@ -114,15 +75,13 @@ class Dispatcher
             <head>
                 <meta charset="UTF-8">
                 <link rel="stylesheet" href="./../../style.css">
-                <title>Accueil</title>
+                <title>Court-Circuit</title>
             </head>
             <body>
-            <header>
                 <header class = "monpetitheader" id="pourreglersoucis">
                         <h1 class = "titre_header">Court Circuit Nancy</h1>     
             
                 </header>
-            </header>
 
             <div class ="pasdidee">
             <p class="pasdidee1">Bienvenue sur</p>
@@ -159,21 +118,8 @@ class Dispatcher
             
             
             <section class="synopsis">
-                <h1>SYNOPSIS</h1>
-                <p>Team Sonic Racing est un jeu de course en provenance de SEGA. Le titre reprend l'univers de son fameux hérisson et marque le retour de cette série de jeux dont le dernier opus date d'il y a six ans. Le jeu repose sur le concept de jeu en équipe où on ne sélectionne pas un seul pilote, mais une équipe de trois as du volant. </p>
-            </section>
-            
-            <section class="synopsis">
-                <h1>SYNOPSIS</h1>
-                <p>Team Sonic Racing est un jeu de course en provenance de SEGA. Le titre reprend l'univers de son fameux hérisson et marque le retour de cette série de jeux dont le dernier opus date d'il y a six ans. Le jeu repose sur le concept de jeu en équipe où on ne sélectionne pas un seul pilote, mais une équipe de trois as du volant. </p>
-            </section>
-            <section class="synopsis">
-                <h1>SYNOPSIS</h1>
-                <p>Team Sonic Racing est un jeu de course en provenance de SEGA. Le titre reprend l'univers de son fameux hérisson et marque le retour de cette série de jeux dont le dernier opus date d'il y a six ans. Le jeu repose sur le concept de jeu en équipe où on ne sélectionne pas un seul pilote, mais une équipe de trois as du volant. </p>
-            </section>
-            <section class="synopsis">
-                <h1>SYNOPSIS</h1>
-                <p>Team Sonic Racing est un jeu de course en provenance de SEGA. Le titre reprend l'univers de son fameux hérisson et marque le retour de cette série de jeux dont le dernier opus date d'il y a six ans. Le jeu repose sur le concept de jeu en équipe où on ne sélectionne pas un seul pilote, mais une équipe de trois as du volant. </p>
+                <h1>Description</h1>
+                <p>Court-circuit est un projet lancé en 2021 par Cynthia et Adrien et aujourd'hui porté et soutenu par : 89 sociétaires 30 producteur.rices locaux </p>
             </section>
             END;
         }
@@ -185,26 +131,18 @@ class Dispatcher
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./../../style.css">
-    <title>Accueil</title>
+    <title>Court-Circuit</title>
 </head>
 <body>
-<header>
     <header class = "monpetitheader" id="pourreglersoucis">
             <h1 class = "titre_header">Court Circuit Nancy</h1>
             <a href="index.php?action=deconnexion" class = "deco">Déconnexion</a>
-            <a href="index.php?action=DisplayCatalogueAction">Affichage du catalogue</a>
-             
-             $html
-            
-
+            <a href="index.php?action=DisplayCatalogueAction" class = "aff">Affichage du catalogue</a>
     </header>
-</header>
+    <section class="comment" >
+    $html
+    </section>
 END;
-
-//            //mon espace
-//            $stmt = new \ccd\action\DisplayCatalogue();
-//            $str = $stmt->execute();
-//            $co = $str;
         }
         echo <<<END
 $co

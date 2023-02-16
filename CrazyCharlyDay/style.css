@@ -18,6 +18,7 @@ body{
     opacity: 0.9;
 }
 
+
 .pasdidee{
     margin : 5px;
     color : white;
@@ -46,7 +47,6 @@ body{
     border-radius: 30px;
     padding : 0px 20px 0px 20px;
     border-radius: 100px;
-    background-color: #044a42;
 }
 
 .pasdidee3:hover{
@@ -89,6 +89,7 @@ html {
 
 .sign{
     text-align: center;
+    margin-top:100px;
 }
 
 .sectionlog{
@@ -140,14 +141,45 @@ html {
 }
 
 .deco{
-    background-color : white;
+    transition-duration: 0.4s;
+    color : white;
+    position: absolute;
+    top: 40px; right: 300px;
     padding : 5px 10px 5px 10px;
-    color : black;
-    transition-duration: 0.5s;
+    text-decoration: none;
     border-radius: 20px;
 }
 
 .deco:hover{
-    background-color : black;
+    color: #062925;
+    background-color: white;
+}
+
+.aff{
+    transition-duration: 0.4s;
+    color: white;
+    position: absolute;
+    top: 40px; right: 50px;
+    padding : 5px 10px 5px 10px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.aff:hover{
+    color: #062925;
+    background-color: white;
+}
+
+.comment{
+    margin: 40px 50px 20px 50px;
+    padding: 50px 50px 50px 50px;
+    background-color : #044a42;
     color : white;
+    opacity: 0.9;
+
+}
+
+img{
+    max-width: 200px;
+    max-height: 200px;
 }

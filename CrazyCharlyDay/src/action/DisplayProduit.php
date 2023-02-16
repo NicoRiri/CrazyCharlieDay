@@ -29,12 +29,6 @@ class DisplayProduit extends Action
                 {$produit->render()}
                 END;
             }
-            /*else {
-                $html .= <<<END
-                <p><strong>Vous ne pouvez pas afficher le catalogue sans vous connecter au préalable !</strong></p>
-                END;
-            }
-            */
         return $html;
     }
 
